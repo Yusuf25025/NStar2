@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her Sky</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky-container">
+    <canvas id="sky-canvas" aria-label="Starfield canvas"></canvas>
+    <div class="overlay-gradient"></div>
+  </div>
+
+  <main class="content">
+    <section class="intro">
+      <h1>For Someone Born Under a Gentle Sky</h1>
+      <p>Swipe or drag to wander across a quiet panorama of stars. Somewhere among them is the one whose light met Earth on <strong>December 7, 2008</strong>.</p>
+    </section>
+
+    <section class="playlist" aria-label="Playlist">
+      <h2>Playlist for the Night</h2>
+      <div class="song-list">
+        <!-- Duplicate and edit cards freely. Everything is text and easy to change. -->
+        <article class="song-card">
+          <div class="song-icon" aria-hidden="true">✧</div>
+          <div class="song-meta">
+            <h3 class="song-title">Song Title</h3>
+            <p class="song-artist">Artist Name</p>
+            <p class="song-year">Year · Month Day</p>
+          </div>
+        </article>
+        <article class="song-card">
+          <div class="song-icon" aria-hidden="true">✧</div>
+          <div class="song-meta">
+            <h3 class="song-title">Another Song</h3>
+            <p class="song-artist">Artist</p>
+            <p class="song-year">Year · Month Day</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Birthdate star modal (tap the special star to open) -->
+  <div id="star-modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="close-button" aria-label="Close">×</button>
+      <p class="modal-label">Birthdate Star</p>
+      <h3 id="star-name">[Star Name]</h3>
+      <p id="star-constellation" class="modal-subtext">Constellation: [Constellation]</p>
+      <ul class="star-details">
+        <li><strong>Distance:</strong> <span id="star-distance">[Distance]</span></li>
+        <li><strong>Spectral class:</strong> <span id="star-class">[Spectral Class]</span></li>
+        <li><strong>Magnitude:</strong> <span id="star-magnitude">[Magnitude]</span></li>
+        <li><strong>Temperature:</strong> <span id="star-temperature">[Temperature]</span></li>
+      </ul>
+      <p id="star-description" class="modal-description">[Write a gentle, personal note about what this star means.]</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
