@@ -35,7 +35,7 @@
       artist: 'Mariah Carey',
       year: 2008,
       releaseDate: '2008-07-01',
-      audioSrc: 'https://Yusuf25025.github.io/NStar2/assets/ill_be_lovin_u_long_time.mp3',
+      audioSrc: 'assets/ill_be_lovin_u_long_time.mp3',
     },
     {
       title: 'Love Lockdown',
