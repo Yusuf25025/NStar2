@@ -9,24 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="sky-container">
-    <canvas id="sky-canvas" aria-label="Starfield canvas"></canvas>
-    <div class="overlay-gradient"></div>
-  </div>
+  <body>
+    <!-- Canvas background for the starfield. Drag/swipe support lives in script.js and keeps vertical scrolling intact. -->
+    <div class="sky-container">
+      <canvas id="sky-canvas" aria-label="Starfield canvas"></canvas>
+      <div class="overlay-gradient"></div>
+    </div>
 
-  <main class="content">
-    <section class="intro">
-      <h1>For Someone Born Under a Gentle Sky</h1>
-      <p>Swipe or drag to wander across a quiet panorama of stars. Somewhere among them is the one whose light met Earth on <strong>December 7, 2008</strong>.</p>
-    </section>
+    <main class="content">
+      <section class="intro">
+        <h1>For Someone Born Under a Gentle Sky</h1>
+        <p>Swipe or drag to wander across a quiet panorama of stars. Somewhere among them is the one whose light met Earth on <strong>December 7, 2008</strong>.</p>
+      </section>
 
-    <section class="playlist" aria-label="Playlist">
-      <h2>Playlist for the Night</h2>
-      <div id="song-list" class="song-list"><!-- Populated by script.js --></div>
-    </section>
-  </main>
+      <!-- Playlist cards are injected from script.js so you can edit the songs array directly there. -->
+      <section class="playlist" aria-label="Playlist">
+        <h2>Playlist for the Night</h2>
+        <div id="song-list" class="song-list"><!-- Populated by script.js --></div>
+      </section>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
