@@ -87,8 +87,7 @@
       audioSrc: 'assets/untouched.mp3',
     },
   ];
-  let currentAudio = null;
-let audioPlayers = [];
+
 
 
   function formatDate(dateStr) {
@@ -407,6 +406,45 @@ audioPlayers.forEach((audio, index) => {
       positionBirthdayHitbox();
     });
   }
+// ----- Global audio behavior: one at a time + autoplay next -----
+document.addEventListener(
+  'play',
+  (event) => {
+    if (event.target.tagName.toLowerCase() !== 'audio') return;
+
+    const current = event.target;
+    const audios = document.querySelectorAll('audio');
+
+    audios.forEach((audio) => {
+      if (audio !== current) {
+        audio.pause();
+        audio.currentTime = 0; // reset others so they always start from the beginning
+      }
+    });
+  },
+  true // capture so it catches <audio> events even inside shadow/containers
+);
+
+document.addEventListener(
+  'ended',
+  (event) => {
+    if (event.target.tagName.toLowerCase() !== 'audio') return;
+
+    const audios = Array.from(document.querySelectorAll('audio'));
+    const index = audios.indexOf(event.target);
+
+    if (index !== -1 && index + 1 < audios.length) {
+      // play next track automatically
+      audios[index + 1].play();
+      // optionally, scroll it into view:
+      audios[index + 1].closest('.song-card')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  },
+  true
+);
 
   // Initialize
   resize();
